@@ -1,0 +1,112 @@
+//font google
+@import "fonts";
+
+//colors
+$color-primary: hsl(233, 47%, 7%);
+$color-secondary: hsl(244, 38%, 16%);
+$color-tertiary: hsl(277, 64%, 61%);
+$color-tertiary2: hsla(277, 64%, 61%, 0.774);
+$color-heading: hsl(0, 0%, 100%);
+$color-paragraph: hsla(0, 0%, 100%, 0.75);
+$color-txtnum: hsla(0, 0%, 100%, 0.6);
+
+
+//space and size
+$s-sm: 15px;
+$s-md: 22px;
+$s-lg: 28px;
+
+//function space
+@function s-desired($s-base, $num) {
+    @if($s-base==$s-sm, $s-base==$s-md, $s-base==$s-lg) {
+        @return $s-base+$num;
+    }
+
+    @else {
+        @return 50px;
+    }
+}
+
+//style font
+@mixin stylef($name, $weight) {
+    font-family: $name;
+    font-weight: $weight;
+}
+
+//align element
+@mixin alignelem($align-it, $f-dir, $f-wrap, $a-cont, $j-cont) {
+    display: flex;
+    align-items: $align-it;
+    flex-direction: $f-dir;
+    flex-wrap: $f-wrap;
+    align-content: $a-cont;
+    justify-content: $j-cont;
+}
+
+//border radius
+@mixin radius($b-radius) {
+    border-radius: $b-radius;
+}
+
+body {
+    @include stylef(Inter, 400);
+
+    font-size: 15px;
+    background-color: $color-primary;
+
+    .card {
+        @include alignelem(center, row, nowrap, normal, normal);
+        @include radius(5px);
+
+        width: 80%;
+        height: 60vh;
+        margin: 50px auto;
+        background-color: $color-secondary;
+
+        .content {
+            @include alignelem(normal, column, nowrap, center, normal);
+
+            width: 50%;
+            height: 100%;
+            padding: s-desired($s-lg, 15px);
+
+            .title {
+                color: $color-heading;
+
+                span {
+                    color: $color-tertiary;
+                }
+            }
+
+            .desc {
+                margin: s-desired($s-lg, 35px) auto;
+                color: $color-paragraph;
+            }
+
+            .numbers {
+                @include alignelem(center, row, nowrap, normal, space-between);
+
+                color: $color-heading;
+
+                h3 {
+                    margin: 0;
+                }
+
+                p {
+                    margin: 0;
+                    color: $color-paragraph
+                }
+            }
+        }
+
+        .img {
+            @include radius(5px);
+
+            width: 50%;
+            height: 100%;
+            background: url(../images/image-header-desktop.jpg) $color-tertiary2 center no-repeat;
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+    }
+}

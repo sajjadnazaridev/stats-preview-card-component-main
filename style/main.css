@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Inter);
+@import url(https://fonts.google.com/specimen/Lexend+Deca);
+body {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: hsl(233deg, 47%, 7%);
+}
+body .card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  border-radius: 5px;
+  width: 80%;
+  height: 60vh;
+  margin: 50px auto;
+  background-color: hsl(244deg, 38%, 16%);
+}
+body .card .content {
+  display: flex;
+  align-items: normal;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: normal;
+  width: 50%;
+  height: 100%;
+  padding: 43px;
+}
+body .card .content .title {
+  color: hsl(0deg, 0%, 100%);
+}
+body .card .content .title span {
+  color: hsl(277deg, 64%, 61%);
+}
+body .card .content .desc {
+  margin: 63px auto;
+  color: hsla(0deg, 0%, 100%, 0.75);
+}
+body .card .content .numbers {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: space-between;
+  color: hsl(0deg, 0%, 100%);
+}
+body .card .content .numbers h3 {
+  margin: 0;
+}
+body .card .content .numbers p {
+  margin: 0;
+  color: hsla(0deg, 0%, 100%, 0.75);
+}
+body .card .img {
+  border-radius: 5px;
+  width: 50%;
+  height: 100%;
+  background: url(../images/image-header-desktop.jpg) hsla(277deg, 64%, 61%, 0.774) center no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}/*# sourceMappingURL=main.css.map */
